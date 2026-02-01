@@ -26,13 +26,13 @@ def test_dont_Throw():
 
     assert len(events) == 0
 
-def test_dispara_cuando_cumple_duracion():
+def test_Throw():
     regla = Rule(
-        name="Sobrecalentamiento",
+        name="Overheat",
         sensors=["temperature"],
         condition=temperature_condition,
         duration=1,
-        severity="ALTA"
+        severity="HIGH"
     )
 
     engine = RuleEngine([regla])
@@ -48,5 +48,5 @@ def test_dispara_cuando_cumple_duracion():
     eventos = engine.process(df)
 
     assert len(eventos) == 1
-    assert eventos[0].rule_name == "Sobrecalentamiento"
+    assert eventos[0].rule_name == "Overheat"
 
