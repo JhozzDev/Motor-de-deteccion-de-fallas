@@ -12,4 +12,5 @@ class Event:
     rule_name:str
     severity:str
     message:str
+
     
