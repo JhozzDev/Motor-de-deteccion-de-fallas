@@ -22,7 +22,7 @@ class RuleEngine:
         for rule in self.rules:
 
             now = datetime.now()
-            condition_met = rule.evaluar(data_window)
+            condition_met = rule.evaluate(data_window)
 
             if condition_met:
                 
@@ -35,7 +35,7 @@ class RuleEngine:
                     event = Event(
                         timestamp=now.strftime("%H:%M:%S"),
                         rule_name=rule.name,
-                        severity=rule.severidad,
+                        severity=rule.severity,
                         message=f"{rule.name}"
                     )
                     self.rule_fired[rule.name] = True

@@ -10,10 +10,10 @@ def temperature_condition(df: pd.DataFrame):
 def test_dont_Throw():
     rule = Rule(
         name="OverHeat",
-        sensores=["temperature"],
-        condicion=temperature_condition,
+        sensors=["temperature"],
+        condition=temperature_condition,
         duration=2,
-        severidad="HIGH"
+        severity="HIGH"
     )
 
     engine = RuleEngine([rule])
@@ -29,10 +29,10 @@ def test_dont_Throw():
 def test_dispara_cuando_cumple_duracion():
     regla = Rule(
         name="Sobrecalentamiento",
-        sensores=["temperature"],
-        condicion=temperature_condition,
+        sensors=["temperature"],
+        condition=temperature_condition,
         duration=1,
-        severidad="ALTA"
+        severity="ALTA"
     )
 
     engine = RuleEngine([regla])
