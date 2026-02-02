@@ -4,13 +4,13 @@
 
 ## Incluye
 
-### Generacion de eventos de alertas
+- Generacion de eventos de alertas
 
-### Reglas configurables
+- Reglas configurables
 
-### Ventanas deslizantes de datos
+- Ventanas deslizantes de datos
 
-### Dashboard en locahost
+- Dashboard en locahost
 
 ## Uso
 
@@ -20,9 +20,9 @@
 
 ## Casos de uso
 
-### Maquinaria Industrial
-### Sensores en tiempo real
-### Plantas de generacion Electrica
-### Analisis preventivo
-### Monitoreo Automotriz
+1. Maquinaria Industrial
+2. Sensores en tiempo real
+3. Plantas de generacion Electrica
+4. Analisis preventivo
+5. Monitoreo Automotriz
 
