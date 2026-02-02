@@ -1,6 +1,6 @@
 # Motor-de-deteccion-de-fallas
 
-## Motor configurable para la deteccion temprana de fallas en sistemas monitoreados, basado en reglas flexibles e integrado con modelo de machine learning
+## Motor configurable para deteccion temprana de comportamiento inusual en sistemas monitoreados, basado en reglas flexibles e integrado con modelo de machine learning. 
 
 ## Incluye
 
