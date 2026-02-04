@@ -21,7 +21,7 @@ X_scaled = scaler.fit_transform(X) # Normalizar Datos
 model = IsolationForest(
 
     n_estimators=1000, # Numero de arboles
-    contamination=0.01, # Anomalias esperadas
+    contamination=0.05, # Anomalias esperadas
     random_state=42, # resultados 
     bootstrap=True
 

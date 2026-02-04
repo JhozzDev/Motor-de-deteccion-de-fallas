@@ -14,7 +14,7 @@ class RuleEngine:
 
         #Graba cuando una condicion comienza
         self.rule_start_times = {}
-        self.rule_fired = {}
+        
 
     def process(self, data_window:pd.DataFrame) ->List[Event]:
         events = []
@@ -28,22 +28,20 @@ class RuleEngine:
                 
                 if rule.name not in self.rule_start_times:
                     self.rule_start_times[rule.name] = now
-                    self.rule_fired[rule.name] = False
+               
                 elapsed = (now - self.rule_start_times[rule.name]).total_seconds()
 
-                if elapsed>=rule.duration and not self.rule_fired[rule.name]:
+                if elapsed>=rule.duration:
                     event = Event(
                         timestamp=now.strftime("%H:%M:%S"),
                         rule_name=rule.name,
                         severity=rule.severity,
                         message=f"{rule.name}"
                     )
-                    self.rule_fired[rule.name] = True
                     events.append(event)
 
             else:
                     if rule.name in self.rule_start_times:
                         del self.rule_start_times[rule.name]    
-                    if rule.name in self.rule_fired:
-                        del self.rule_fired[rule.name]
+         
         return events            
