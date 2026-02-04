@@ -28,9 +28,20 @@ df["estado_ml"] = df["ml_result"].map({
 def ml_anomaly_rule(df):
     return df["ml_result"].iloc[-1] == -1
 
+def over_heat(df):
+    return df["ml_result"].iloc[-1] >= 89
+
+def over_pressure(df):
+    return df["pressure"].iloc[-1] >= 100
+
+def low_humidity(df):
+    return df["humidity"].iloc[-1] < 60
 
 rules = [
-    Rule(name="ML anomaly", sensors=["temperature"], condition=ml_anomaly_rule, duration=1, severity="Critic")]
+    Rule(name="ML temp anomaly", sensors=["temperature"], condition=ml_anomaly_rule, duration=1, severity="Critic"),
+    Rule(name="Over heat", sensors=["temperature"], condition=over_heat, duration=1, severity="Critic"),
+    Rule(name="Over pressure", sensors=["pressure"], condition=over_pressure, duration=1, severity="Critic"),
+    Rule(name="Low humidity", sensors=["humidity"], condition=low_humidity, duration=1, severity="Critic")]
 
 # Motor
 engine = RuleEngine(rules)
