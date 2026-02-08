@@ -53,6 +53,7 @@ def home():
 # Definir ruta
 @app.post("/process")
 def process_data(data:dict):
+    
     df = pd.DataFrame([data])
 
     # Escalar
